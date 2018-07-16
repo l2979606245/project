@@ -26,13 +26,14 @@ var add = (element, arr, html_element_name) => {
 }
 //动态生成表格(给定格式为对象数组类型的data)
 var addTable = (data) => {
+    data = JSON.parse(data)
     var container = e('.gridtable')
     add(container, Object.keys(data[0]), "Th")
     data.map((x) => {
         add(container, Object.values(x), "Td")
     })
 }
-//查询记录(向后端请求还不会，这里用的模拟数据)
+
 var queryRecord = () => {
     var button = e('#id-button-query')
     var tel = e('#telephone')
